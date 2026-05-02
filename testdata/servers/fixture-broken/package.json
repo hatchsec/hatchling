@@ -1,0 +1,13 @@
+{
+  "name": "fixture-broken",
+  "version": "1.0.0",
+  "description": "Intentionally broken MCP fixture server. Crashes immediately for error-handling tests.",
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "bin": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
