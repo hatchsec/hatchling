@@ -388,18 +388,17 @@ Have Claude Code do a 10-minute reconnaissance pass at the start of session 1 to
 
 ### Verified 2026-05-02
 
-1. **MCP spec version: `2025-11-25`** — The current released spec is at `https://modelcontextprotocol.io/specification/2025-11-25`. Released November 25, 2025 (MCP's one-year anniversary). No 2026 spec version exists yet; the 2026 roadmap is working-group–driven with no release date. **Action:** update starter prompt 5's pin from `2025-06-18` → `2025-11-25`.
+| # | Item | Verified value | Source |
+|---|------|----------------|--------|
+| 1 | MCP spec version | `2025-11-25` | [modelcontextprotocol/specification releases](https://github.com/modelcontextprotocol/specification/releases) |
+| 2 | Claude Code MCP config (macOS) | `~/.claude.json` → `mcpServers` key (user-scoped); `.mcp.json` at project root (project-scoped) | [docs.claude.com](https://docs.claude.com) |
+| 3 | Cursor MCP config (macOS) | `~/.cursor/mcp.json` → `mcpServers` key (global); `.cursor/mcp.json` at project root | [cursor.com/docs/mcp](https://cursor.com/docs/mcp) |
 
-2. **Claude Code MCP config path (macOS):**
-   - **Global (user-scoped):** `~/.claude.json` — the `mcpServers` top-level key. Note: `~/.claude/settings.json` exists but is for permissions/UI settings and is **ignored** for MCP server definitions (confirmed by [anthropics/claude-code#4976](https://github.com/anthropics/claude-code/issues/4976)).
-   - **Project-scoped:** `.mcp.json` in the project root (walk up to git root, as the design doc already describes). Can be committed to VCS for team sharing.
-   - Do **not** confuse `~/.claude/` (runtime directory: cache, history, sessions) with `~/.claude.json` (config file at `$HOME`).
+**Item 1 — breaking changes from `2024-11-05` baseline:** HTTP+SSE transport replaced by Streamable HTTP; OAuth 2.1 auth added; batching added then removed. None of these affect stdio-only v0 scope. **Update starter prompt 5** pin: `2025-06-18` → `2025-11-25`.
 
-3. **Cursor MCP config path (macOS):**
-   - **Global:** `~/.cursor/mcp.json`
-   - **Project-scoped:** `.cursor/mcp.json` in the project root
-   - Schema is identical to Claude Code's `mcpServers` shape: `{ "mcpServers": { "<name>": { "command": "...", "args": [...], "env": {...} } } }`
-   - Cursor must be fully restarted after config changes.
+**Item 2 — `~/.claude/settings.json`** holds permissions/hooks/env only — does **not** hold MCP server definitions. Do not confuse `~/.claude/` (runtime directory) with `~/.claude.json` (config file at `$HOME`). `.mcp.json` at the project root can be committed to VCS for team sharing.
+
+**Item 3 — Schema:** `{ "mcpServers": { "<name>": { "command": "...", "args": [...], "env": {...} } } }`. Optional fields: `type: "stdio"`, `envFile`. Restart Cursor fully after config changes.
 
 ## 15. Risks / Things That Could Go Wrong
 
