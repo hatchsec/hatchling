@@ -1,0 +1,22 @@
+{
+  "mcpServers": {
+    "fixture-clean": {
+      "command": "node",
+      "args": [
+        "/Users/darrell/Documents/hatchsec/hatchling/testdata/servers/fixture-clean/index.js"
+      ]
+    },
+    "fixture-noisy": {
+      "command": "node",
+      "args": [
+        "/Users/darrell/Documents/hatchsec/hatchling/testdata/servers/fixture-noisy/index.js"
+      ]
+    },
+    "fixture-broken": {
+      "command": "node",
+      "args": [
+        "/Users/darrell/Documents/hatchsec/hatchling/testdata/servers/fixture-broken/index.js"
+      ]
+    }
+  }
+}

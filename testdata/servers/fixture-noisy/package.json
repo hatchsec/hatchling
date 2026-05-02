@@ -1,0 +1,16 @@
+{
+  "name": "fixture-noisy",
+  "version": "0.1.0",
+  "description": "A simple weather lookup MCP server.",
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "bin": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.0.4"
+  },
+  "license": "MIT"
+}

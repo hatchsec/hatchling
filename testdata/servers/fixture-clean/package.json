@@ -1,0 +1,16 @@
+{
+  "name": "fixture-clean",
+  "version": "1.0.0",
+  "description": "Well-behaved MCP fixture server. Single tool, matches description exactly.",
+  "type": "module",
+  "private": true,
+  "main": "index.js",
+  "bin": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.0.4"
+  },
+  "license": "MIT"
+}
