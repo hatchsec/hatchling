@@ -30,3 +30,8 @@ go.work.sum
 # Editor/IDE
 # .idea/
 # .vscode/
+
+mcp-audit-design.md
+
+# Working design doc — kept local until clean v1 is ready
+docs/design.md
