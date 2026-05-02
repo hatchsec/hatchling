@@ -4,7 +4,7 @@ Security posture scanner for MCP (Model Context Protocol) servers configured on 
 
 ## Source of truth
 
-Always read `docs/mcp-audit-design.md` before starting non-trivial work. It contains: architecture, project layout, module responsibilities, CLI UX, risk rules, v0 scope, resolved decisions, starter prompts. If anything in this CLAUDE.md conflicts with the design doc, the design doc wins.
+Always read `docs/design.md` before starting non-trivial work. It contains: architecture, project layout, module responsibilities, CLI UX, risk rules, v0 scope, resolved decisions, starter prompts. If anything in this CLAUDE.md conflicts with the design doc, the design doc wins.
 
 ## Tech stack
 
@@ -77,7 +77,7 @@ If a feature feels useful but isn't in the v0 list above or design doc section 8
 
 ## File and directory pointers
 
-- `docs/mcp-audit-design.md` — full design (read first)
+- `docs/design.md` — full design (read first)
 - `docs/assets/` — logos and brand assets
 - `cmd/hatchling/` — CLI entry point (Cobra commands)
 - `internal/discover/` — find MCP configs across editors
@@ -107,7 +107,7 @@ If a feature feels useful but isn't in the v0 list above or design doc section 8
 
 ## When in doubt
 
-1. Read `docs/mcp-audit-design.md`
+1. Read `docs/design.md`
 2. Prefer smaller PRs over bigger ones
 3. Don't add a dependency without strong justification
 4. Ask before exceeding v0 scope
@@ -115,7 +115,7 @@ If a feature feels useful but isn't in the v0 list above or design doc section 8
 
 ## Working with Claude Code on this repo
 
-- Run starter prompts from `docs/mcp-audit-design.md` section 13 one at a time, in fresh sessions, reviewing each diff carefully before merging.
+- Run starter prompts from `docs/design.md` section 13 one at a time, in fresh sessions, reviewing each diff carefully before merging.
 - Use `/clear` between unrelated tasks to keep context fresh.
 - Use plan mode (Tab to toggle) for any prompt that touches more than ~3 files.
 - Use the verification checklist at the end of each session: `go build ./...`, `go test ./...`, `golangci-lint run` should all pass before opening the PR.
